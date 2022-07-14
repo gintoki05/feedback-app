@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-function FeedbackItem() {
+function FeedbackItem({ item }) {
   const [rating, setRating] = useState(7);
-  const [text, setText] = useState('Example');
+  const [text, setText] = useState("Example");
 
   return (
     <div>
-      <div>{rating}</div>
-      <div>{text}</div>
+      <div>{item.rating}</div>
+      <div>{item.text}</div>
     </div>
   );
 }
