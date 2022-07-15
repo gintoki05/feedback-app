@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { FaTimes } from 'react-icons/fa';
+import Card from './shared/Card';
 
-function FeedbackItem({ item }) {
-  const [rating, setRating] = useState(7);
-  const [text, setText] = useState("Example");
-
+function FeedbackItem({ item, handleDelete }) {
   return (
-    <div>
+    <Card>
       <div>{item.rating}</div>
+      <button onClick={() => handleDelete(item.id)}>
+        <FaTimes color='purple' />
+      </button>
       <div>{item.text}</div>
-    </div>
+    </Card>
   );
 }
 export default FeedbackItem;
